@@ -1,4 +1,4 @@
-package com.practice.dsa;
+package com.practice.dsa.search;
 
 public class TreeRecursionDemo {
     public void calculateRecursive(int n) {

@@ -1,4 +1,4 @@
-package com.practice.dsa;
+package com.practice.dsa.search;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

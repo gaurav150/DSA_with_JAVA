@@ -1,4 +1,4 @@
-package com.practice.dsa;
+package com.practice.dsa.search;
 public class IterationRecurssionDemo {
 
     public void calculateIterative(int n) {

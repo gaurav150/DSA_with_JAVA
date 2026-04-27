@@ -1,7 +1,11 @@
 package com.practice.dsa;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class BinarySearchIterative {
 
+    static Logger logger = Logger.getLogger(BinarySearchIterative.class.getName());
     public int binarySearch(int[] arr, int n, int key) {
         int leftIndex = 0;
         int rightIndex = n-1;
@@ -19,11 +23,11 @@ public class BinarySearchIterative {
     }
 
     public static void main(String[] args) {
-        System.out.println("Binary Search Algorithm");
+        logger.info("Binary Search Algorithm");
         BinarySearchIterative bs = new BinarySearchIterative();
-        int result = bs.binarySearch(new int[]{4, 11, 18, 30, 54},5,36);
-        System.out.println("Element found at index: " + result);
+        int result = bs.binarySearch(new int[]{4, 11, 18, 30, 54}, 5, 36);
+        logger.log(Level.INFO, "Search index for 36: {0} (-1 = not found)", result);
         result = bs.binarySearch(new int[]{4, 11, 18, 30, 54}, 5, 30);
-        System.out.println("Element found at index for new key: " + result);
+        logger.log(Level.INFO, "Search index for 30: {0} (-1 = not found)", result);
     }
 }

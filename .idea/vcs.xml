@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../PLAYWRIGHT" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Youtube_ELT_Using_Python" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../bbd-automation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../lrqa-automation-tools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../roku-automation" vcs="Git" />
+  </component>
+</project>

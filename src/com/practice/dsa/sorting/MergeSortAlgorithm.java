@@ -32,22 +32,24 @@ public class MergeSortAlgorithm {
         }
         System.arraycopy(temp, 0, arr, leftIndex, n);
     }
+
     @SuppressWarnings("java:S106")
     public void display(int[] arr, int n) {
-        for(int i=0;i<n;i++)
+        for (int i = 0; i < n; i++) {
             System.out.print(arr[i] + " ");
-        System.out.println();
+        }
     }
 
     @SuppressWarnings("java:S106")
     public static void main(String[] args) {
         MergeSortAlgorithm s = new MergeSortAlgorithm();
         int[] a = {3, 5, 8, 9, 6, 2};
-        System.out.print("Original Array: ");
-        s.display(a, 6);
-        s.mergeSort(a, 0, a.length-1);
-        System.out.print("Sorted Array: ");
-        s.display(a, 6);
+        System.out.println("Original Array: ");
+        s.display(a, a.length);
+        s.mergeSort(a, 0, a.length - 1);
+        System.out.println();
+        System.out.println("Sorted Array: ");
+        s.display(a, a.length);
     }
 
 }

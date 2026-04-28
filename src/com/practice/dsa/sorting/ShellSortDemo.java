@@ -2,7 +2,7 @@ package com.practice.dsa.sorting;
 
 public class ShellSortDemo {
 
-    public void ShellSort(int[] arr) {
+    public void shellSort(int[] arr) {
         for (int gap = arr.length / 2; gap > 0; gap /= 2) {
             for (int i = gap; i < arr.length; i++) {
                 int temp = arr[i];
@@ -27,7 +27,7 @@ public class ShellSortDemo {
         ShellSortDemo sd = new ShellSortDemo();
         int[] arr = {7, 4, 10, 8, 3, 1};
         sd.display(arr);
-        sd.ShellSort(arr);
+        sd.shellSort(arr);
         sd.display(arr);
     }
 }

@@ -17,9 +17,9 @@ public class QuickSortAlgorithm {
         int j = highIndex;
         do {
             while (i <= j && arr[i] <= pivot)
-                i = i + 1;
+                i++;
             while (i <= j && arr[j] > pivot)
-                j = j - 1;
+                j--;
             if (i <= j)
                 swap(arr, i, j);
         } while (i < j);

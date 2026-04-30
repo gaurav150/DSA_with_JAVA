@@ -24,19 +24,6 @@ public class ReverseLinkedListDemo {
         return previous;
     }
 
-    static int getLength(Node head) {
-
-        int length = 0;
-
-        // Count nodes in linked list
-        while (head != null) {
-            length++;
-            head = head.next;
-        }
-
-        return length;
-    }
-
     public static int getMiddle(int length) {
         return length%2==0?length/2:length/2+1;
     }

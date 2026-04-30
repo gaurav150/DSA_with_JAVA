@@ -4,6 +4,7 @@ public class LinkedListDemo {
     class Node {
         int element;
         Node next;
+
         public Node(int e, Node n) {
             element = e;
             next = n;
@@ -30,7 +31,7 @@ public class LinkedListDemo {
 
     public void addLast(int e) {
         Node newest = new Node(e, null);
-        if(isEmpty()) {
+        if (isEmpty()) {
             head = newest;
         } else {
             tail.next = newest;
@@ -40,8 +41,8 @@ public class LinkedListDemo {
     }
 
     public void addFirst(int e) {
-        Node newest = new Node(e,null);
-        if(isEmpty()) {
+        Node newest = new Node(e, null);
+        if (isEmpty()) {
             head = newest;
             tail = newest;
         } else {
@@ -49,14 +50,29 @@ public class LinkedListDemo {
             head = newest;
         }
         size++;
+    }
 
+    public void addAny(int e, int position) {
+        if (position <= 0 || position >= size) {
+            System.out.println("Invalid position");
+        }
+        Node newest = new Node(e, null);
+        Node p = head;
+        int i = 1;
+        while (i < position - 1) {
+            p = p.next;
+            i++;
+        }
+        newest.next = p.next;
+        p.next = newest;
+        size++;
     }
 
     public int search(int key) {
         Node p = head;
         int index = 0;
-        while(p!=null) {
-            if(p.element==key)
+        while (p != null) {
+            if (p.element == key)
                 return index;
             p = p.next;
             index = index + 1;
@@ -66,7 +82,7 @@ public class LinkedListDemo {
 
     public void display() {
         Node p = head;
-        while(p!=null) {
+        while (p != null) {
             System.out.print(p.element + "-->");
             p = p.next;
         }
@@ -81,13 +97,14 @@ public class LinkedListDemo {
         l.addLast(4);
         l.addLast(12);
         l.display();
-        System.out.println("Size: "+l.length());
+        System.out.println("Size: " + l.length());
         l.addLast(8);
         l.addLast(3);
         l.display();
-        System.out.println("Size: "+l.length());
+        System.out.println("Size: " + l.length());
         l.addFirst(9);
+        l.addAny(20, 3);
         l.display();
-        System.out.println("size:"+l.length());
+        System.out.println("size:" + l.length());
     }
 }

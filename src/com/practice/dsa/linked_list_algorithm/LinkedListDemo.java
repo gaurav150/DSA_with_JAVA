@@ -1,6 +1,7 @@
 package com.practice.dsa.linked_list_algorithm;
 
 public class LinkedListDemo {
+    /** List node: value {@code e}, successor {@code n}. */
     static class Node {
         int element;
         Node next;
@@ -21,14 +22,17 @@ public class LinkedListDemo {
         size = 0;
     }
 
+    /** @return number of elements */
     public int length() {
         return size;
     }
 
+    /** @return {@code true} if size is 0 */
     public boolean isEmpty() {
         return size == 0;
     }
 
+    /** Appends {@code e} at the tail. */
     public void addLast(int e) {
         Node newest = new Node(e, null);
         if (isEmpty()) {
@@ -40,6 +44,7 @@ public class LinkedListDemo {
         size++;
     }
 
+    /** Inserts {@code e} at the head. */
     public void addFirst(int e) {
         Node newest = new Node(e, null);
         if (isEmpty()) {
@@ -52,6 +57,10 @@ public class LinkedListDemo {
         size++;
     }
 
+    /**
+     * Inserts {@code e} at 1-based {@code position}.
+     * Prints and no-ops if position is invalid (see implementation).
+     */
     public void addAny(int e, int position) {
         if (position <= 0 || position >= size) {
             System.out.println("Invalid position");
@@ -68,6 +77,7 @@ public class LinkedListDemo {
         size++;
     }
 
+    /** @return removed head value, or {@code -1} if empty */
     public int removeFirst() {
         if (isEmpty()) {
             System.out.println("List is empty");
@@ -82,6 +92,7 @@ public class LinkedListDemo {
         return e;
     }
 
+    /** @return removed tail value, or {@code -1} if empty; O(n) for singly linked list */
     public int removeLast() {
         if (isEmpty()) {
             System.out.println("List is empty");
@@ -103,6 +114,7 @@ public class LinkedListDemo {
         return e;
     }
 
+    /** @return value at 0-based {@code position}, or {@code -1} if invalid */
     public int removeAny(int position) {
         if (position < 0 || position >= size) {
             System.out.println("Invalid position");
@@ -125,6 +137,7 @@ public class LinkedListDemo {
 
     }
 
+    /** @return 0-based index of {@code key}, or {@code -1} if absent */
     public int search(int key) {
         Node p = head;
         int index = 0;
@@ -132,11 +145,12 @@ public class LinkedListDemo {
             if (p.element == key)
                 return index;
             p = p.next;
-            index = index + 1;
+            index++;
         }
         return -1;
     }
 
+    /** Prints elements from head to tail, separated by {@code -->}. */
     public void display() {
         Node p = head;
         while (p != null) {

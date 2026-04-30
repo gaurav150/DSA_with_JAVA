@@ -106,5 +106,7 @@ public class LinkedListDemo {
         l.addAny(20, 3);
         l.display();
         System.out.println("size:" + l.length());
+        System.out.println("index is -> "+l.search(20));
+        l.display();
     }
 }

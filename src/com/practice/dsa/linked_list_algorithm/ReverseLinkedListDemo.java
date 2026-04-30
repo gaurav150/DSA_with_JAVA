@@ -57,6 +57,6 @@ public class ReverseLinkedListDemo {
         l.addAny(20, 3);
         l.display();
         System.out.println("Size: " + l.length());
-        System.out.println("middle element -> "+(getMiddle(l.length())));
+        System.out.println("middle element -> " + (getMiddle(l.length())));
     }
 }

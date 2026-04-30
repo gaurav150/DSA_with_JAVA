@@ -1,7 +1,7 @@
 package com.practice.dsa.linked_list_algorithm;
 
 public class LinkedListDemo {
-    class Node {
+    static class Node {
         int element;
         Node next;
 
@@ -68,6 +68,63 @@ public class LinkedListDemo {
         size++;
     }
 
+    public int removeFirst() {
+        if (isEmpty()) {
+            System.out.println("List is empty");
+            return -1;
+        }
+        int e = head.element;
+        head = head.next;
+        size--;
+        if (isEmpty()) {
+            tail = null;
+        }
+        return e;
+    }
+
+    public int removeLast() {
+        if (isEmpty()) {
+            System.out.println("List is empty");
+            return -1;
+        }
+        int e = tail.element;
+        if (head == tail) {
+            head = null;
+            tail = null;
+        } else {
+            Node p = head;
+            while (p.next != tail) {
+                p = p.next;
+            }
+            p.next = null;
+            tail = p;
+        }
+        size--;
+        return e;
+    }
+
+    public int removeAny(int position) {
+        if (position < 0 || position >= size) {
+            System.out.println("Invalid position");
+            return -1;
+        }
+        if (position == 0) {
+            return removeFirst();
+        } else {
+            Node p = head;
+            int i = 0;
+            while (i < position - 1) {
+                p = p.next;
+                i++;
+            }
+            int e = p.next.element;
+            p.next = p.next.next;
+            size = size - 1;
+            return e;
+        }
+
+    }
+
     public int search(int key) {
         Node p = head;
         int index = 0;
@@ -106,7 +163,13 @@ public class LinkedListDemo {
         l.addAny(20, 3);
         l.display();
         System.out.println("size:" + l.length());
-        System.out.println("index is -> "+l.search(20));
+        System.out.println("index is -> " + l.search(20));
+        l.display();
+        System.out.println("removed element is -> " + l.removeFirst());
+        l.display();
+        System.out.println("last element removed -> " + l.removeLast());
+        l.display();
+        System.out.println("removed element is " + l.removeAny(4));
         l.display();
     }
 }

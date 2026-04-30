@@ -39,6 +39,19 @@ public class LinkedListDemo {
         size++;
     }
 
+    public void addFirst(int e) {
+        Node newest = new Node(e,null);
+        if(isEmpty()) {
+            head = newest;
+            tail = newest;
+        } else {
+            newest.next = head;
+            head = newest;
+        }
+        size++;
+
+    }
+
     public int search(int key) {
         Node p = head;
         int index = 0;
@@ -73,6 +86,8 @@ public class LinkedListDemo {
         l.addLast(3);
         l.display();
         System.out.println("Size: "+l.length());
-
+        l.addFirst(9);
+        l.display();
+        System.out.println("size:"+l.length());
     }
 }

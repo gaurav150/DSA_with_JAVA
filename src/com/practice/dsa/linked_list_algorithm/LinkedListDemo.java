@@ -61,6 +61,7 @@ public class LinkedListDemo {
      * Inserts {@code e} at 1-based {@code position}.
      * Prints and no-ops if position is invalid (see implementation).
      */
+    @SuppressWarnings("java:S106")
     public void addAny(int e, int position) {
         if (position <= 0 || position >= size) {
             System.out.println("Invalid position");
@@ -78,6 +79,7 @@ public class LinkedListDemo {
     }
 
     /** @return removed head value, or {@code -1} if empty */
+    @SuppressWarnings("java:S106")
     public int removeFirst() {
         if (isEmpty()) {
             System.out.println("List is empty");
@@ -93,6 +95,7 @@ public class LinkedListDemo {
     }
 
     /** @return removed tail value, or {@code -1} if empty; O(n) for singly linked list */
+    @SuppressWarnings("java:S106")
     public int removeLast() {
         if (isEmpty()) {
             System.out.println("List is empty");
@@ -115,6 +118,7 @@ public class LinkedListDemo {
     }
 
     /** @return value at 0-based {@code position}, or {@code -1} if invalid */
+    @SuppressWarnings("java:S106")
     public int removeAny(int position) {
         if (position < 0 || position >= size) {
             System.out.println("Invalid position");
@@ -151,6 +155,7 @@ public class LinkedListDemo {
     }
 
     /** Prints elements from head to tail, separated by {@code -->}. */
+    @SuppressWarnings("java:S106")
     public void display() {
         Node p = head;
         while (p != null) {
